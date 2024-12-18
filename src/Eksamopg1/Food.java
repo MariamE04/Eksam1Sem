@@ -8,9 +8,9 @@ public class Food extends Product {
         this.expireDate = expireDate;
     }
 
-    @Override
-    public String toString() {
-        return getName() + ", " + expireDate + ": " + getPrice() + " euro";
+    public String getExpireDate() {
+        return expireDate;
     }
 }
+
 

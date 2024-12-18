@@ -5,36 +5,54 @@ import java.util.ArrayList;
 public class Basket {
     ArrayList<Product> products = new ArrayList<>();
 
-    public Basket(ArrayList<Product> products) {
-        this.products = products;
+    public void addProduct(Product product) {
+        products.add(product);
     }
 
-    public void addProduct(Product product){
-        if(products != null){
-            products.add(product);
-            System.out.println(product.getName() + " .added to basket.");
-        } else {
-            System.out.println("Cannot add null product");
+    public void printAll() {
+        if (products.isEmpty()) {
+            System.out.println("The basket is empty.");
+            return;
         }
+        System.out.println("Clothes");
+        for (Product product : products) {
+            if (product instanceof Clothes) {
+                Clothes clothes = (Clothes) product;
+                System.out.println(clothes.getName() + " , " +
+                        clothes.getColor() + " Size " + " , " +
+                        clothes.getSize() + " : " +
+                        clothes.getPrice() + " euro");
+            }
+        }
+
+        System.out.println("\\nElectronics");
+        for (Product product : products) {
+            if (product instanceof Electronic){
+                Electronic electronic = (Electronic) product;
+                System.out.println(electronic.getName() + " , " +
+                        electronic.getWarrantyNoOfMonths() + "  months warranty: " +
+                        electronic.getPrice() + " euro");
+            }
+        }
+
+        System.out.println("\nFood");
+        for (Product product : products){
+            if(product instanceof Food){
+                Food food = (Food) product;
+                System.out.println(food.getName() + " , " +
+                        food.getExpireDate() + " : " +
+                        food.getPrice() + " euro");
+            }
+        }
+        System.out.printf("\nTotal: %.2f euro\n", calculateTotalPrice());
     }
 
-    public double calculateTotalPoint(){
+    private double calculateTotalPrice(){
         double total = 0;
         for(Product product : products){
             total += product.getPrice();
         }
         return total;
     }
-
-    public void printall(){
-        if(products.isEmpty()){
-            System.out.println("Basket is empty");
-        } else {
-            System.out.println("Products in the basket:");
-           for(Product product : products){
-                System.out.println(product.toString());
-            }
-        }
-    }
-
 }
+

@@ -8,9 +8,8 @@ public class Electronic extends Product {
         this.warrantyNoOfMonths = warrantyNoOfMonths;
     }
 
-    @Override
-    public String toString() {
-        return getName() + ", " + warrantyNoOfMonths + " months warranty: " + getPrice() + " euro";
+    public int getWarrantyNoOfMonths() {
+        return warrantyNoOfMonths;
     }
 }
 

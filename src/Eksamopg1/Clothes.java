@@ -10,9 +10,12 @@ public class Clothes extends Product {
         this.size = size;
     }
 
-    @Override
-    public String toString() {
-        return getName() + ", " + color + ", size " + size + ": " + getPrice() + " euro";
+    public String getColor() {
+        return color;
+    }
+
+    public int getSize() {
+        return size;
     }
 }
 
