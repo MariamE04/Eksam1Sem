@@ -17,9 +17,5 @@ public abstract class Product {
         return price;
     }
 
-    @Override
-    public String toString() {
-        return name + ": " + price + " euro";
-    }
 }
 

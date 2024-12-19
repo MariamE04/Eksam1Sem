@@ -19,8 +19,8 @@ public class Basket {
             if (product instanceof Clothes) {
                 Clothes clothes = (Clothes) product;
                 System.out.println(clothes.getName() + " , " +
-                        clothes.getColor() + " Size " + " , " +
-                        clothes.getSize() + " : " +
+                        clothes.getColor() + " Size: " +
+                        clothes.getSize() + " , " +
                         clothes.getPrice() + " euro");
             }
         }
