@@ -4,9 +4,9 @@ public class Dryer implements LaundryMachine {
     private int duration;
     private double price;
 
-    public Dryer(int duration, double price) {
-        this.duration = duration;
-        this.price = price;
+    public Dryer() {
+        this.duration = 30;
+        this.price = duration * 0.5;
     }
 
     @Override

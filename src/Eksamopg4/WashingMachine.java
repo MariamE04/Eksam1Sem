@@ -6,6 +6,10 @@ public class WashingMachine implements LaundryMachine{
     private boolean isRunnig;
     private int capacity;
 
+    public WashingMachine( int capacity) {
+        this.capacity = capacity;
+        this.price = capacity * 1.2;
+    }
 
     @Override
     public void chooseProgram() {
