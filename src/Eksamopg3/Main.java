@@ -18,14 +18,17 @@ public class Main {
 
         // Opret kurser
         Course course1 = new Course("Datamatikker1sem");
+        Course course3 = new Course("MatematikA");
         Course course2 = new Course("EngelskB");
 
         // Tilføj kurser til akademiet
+        academy.addCourse(course3);
         academy.addCourse(course1);
         academy.addCourse(course2);
 
         // Tilmeld studerende kurser
         student1.addCourse(course1.getCourseName(),7);
+        student1.addCourse(course3.getCourseName(),12);
         student2.addCourse(course2.getCourseName(),10);
 
         // Tilføj studerende til akademiet
@@ -34,10 +37,13 @@ public class Main {
 
         // Udskriv diplom for studerende
         academy.printDiploma(student1);
+        System.out.println("---------------------");
         academy.printDiploma(student2);
 
         // Udskriv den højeste og laveste karakter
-        System.out.println("Hightst grade: " + academy.gethighestGrade());
+        System.out.println("--------------------------");
+        System.out.println("Lowest and highest grade:");
+        System.out.println("Highest grade: " + academy.gethighestGrade());
         System.out.println("Lowest grade: " + academy.getLowestGrade());
     }
 }
