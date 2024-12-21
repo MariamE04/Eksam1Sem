@@ -42,7 +42,7 @@ public class Academy {
 
 
     // Returner den højeste karakter blandt alle studerende
-    public int getHighest() {
+    public int gethighestGrade() {
         int highest = Integer.MIN_VALUE;  // Start med den laveste mulige værdi
 
         // Gennemgå hver student i listen
@@ -60,7 +60,7 @@ public class Academy {
     }
 
     // Returner den laveste karakter blandt alle studerende
-    public int getLowestAmount() {
+    public int getLowestGrade() {
         int lowest = Integer.MAX_VALUE;  // Start med den højeste mulige værdi
 
         // Gennemgå hver student i listen
