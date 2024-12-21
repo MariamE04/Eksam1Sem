@@ -23,7 +23,8 @@ public class Student {
     }
 
     private boolean isGradeValid(int grade) {
-        return grade == -3 || grade == 0 || grade == 2 || grade == 4 || grade == 7 || grade == 10 || grade == 12;
+        return grade == -3 || grade == 0 || grade == 2 || grade == 4
+                || grade == 7 || grade == 10 || grade == 12;
     }
 
     public Integer getGrade(String courseName) {

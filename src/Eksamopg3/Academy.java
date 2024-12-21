@@ -41,11 +41,40 @@ public class Academy {
 
 
 
-    public int getHighest(int amount){
-        return amount;
+    // Returner den højeste karakter blandt alle studerende
+    public int getHighest() {
+        int highest = Integer.MIN_VALUE;  // Start med den laveste mulige værdi
+
+        // Gennemgå hver student i listen
+        for (Student student : students) {
+            // Gennemgå hver kursus og karakter for studenten
+            for (int grade : student.getCourses().values()) {
+                // Hvis karakteren er højere end den nuværende højeste, opdater højeste
+                if (grade > highest) {
+                    highest = grade;
+                }
+            }
+        }
+
+        return highest;  // Returner den højeste karakter
     }
 
-    public int getLowestAmount(int amount) {
-        return amount;
+    // Returner den laveste karakter blandt alle studerende
+    public int getLowestAmount() {
+        int lowest = Integer.MAX_VALUE;  // Start med den højeste mulige værdi
+
+        // Gennemgå hver student i listen
+        for (Student student : students) {
+            // Gennemgå hver kursus og karakter for studenten
+            for (int grade : student.getCourses().values()) {
+                // Hvis karakteren er lavere end den nuværende laveste, opdater laveste
+                if (grade < lowest) {
+                    lowest = grade;
+                }
+            }
+        }
+
+        return lowest;  // Returner den laveste karakter
     }
+
 }
