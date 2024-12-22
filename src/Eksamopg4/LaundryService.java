@@ -13,33 +13,52 @@ public class LaundryService {
     public void addMachine(LaundryMachine laundryMachine) {
         laundryMachines.add(laundryMachine);
     }
-
     public LaundryMachine chooseMachine() {
         if (laundryMachines.isEmpty()) {
             System.out.println("Der er ingen maskiner tilgængelige.");
             return null;
         }
 
-        System.out.println("Vælg en maskine fra listen:");
-        for (int i = 0; i < laundryMachines.size(); i++) {
-            System.out.println((i + 1) + ") " + laundryMachines.get(i).toString());
+        // Spørg brugeren om de vil vælge en vaskemaskine eller tørretumbler
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Vælg type maskine:");
+        System.out.println("1) Vaskemaskine");
+        System.out.println("2) Tørretumbler");
+        int choice = scanner.nextInt();
+
+        ArrayList<LaundryMachine> filteredMachines = new ArrayList<>();
+
+        // Filtrer maskiner baseret på brugerens valg
+        for (LaundryMachine machine : laundryMachines) {
+            if ((choice == 1 && machine instanceof WashingMachine) ||
+                    (choice == 2 && machine instanceof Dryer)) {
+                filteredMachines.add(machine);
+            }
         }
 
-        Scanner scanner = new Scanner(System.in);
-        int choice = -1;
+        if (filteredMachines.isEmpty()) {
+            System.out.println("Ingen maskiner af den valgte type tilgængelige.");
+            return null;
+        }
 
-        // Sikrer, at brugeren vælger en gyldig maskine
-        while (choice < 1 || choice > laundryMachines.size()) {
+        // Vis de tilgængelige maskiner af den valgte type
+        System.out.println("Vælg en maskine fra listen:");
+        for (int i = 0; i < filteredMachines.size(); i++) {
+            System.out.println((i + 1) + ") " + filteredMachines.get(i).toString());
+        }
+
+        int validChoice = -1;
+        while (validChoice < 1 || validChoice > filteredMachines.size()) {
             System.out.print("Indtast nummeret på maskinen, du vil vælge: ");
             if (scanner.hasNextInt()) {
-                choice = scanner.nextInt();
+                validChoice = scanner.nextInt();
             } else {
                 System.out.println("Ugyldigt input. Prøv igen.");
                 scanner.next(); // Ryd scanner buffer
             }
         }
 
-        LaundryMachine chosenMachine = laundryMachines.get(choice - 1);
+        LaundryMachine chosenMachine = filteredMachines.get(validChoice - 1);
         System.out.println("Du har valgt: " + chosenMachine.toString());
         return chosenMachine;
     }
