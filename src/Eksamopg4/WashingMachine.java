@@ -69,8 +69,6 @@ public class WashingMachine implements LaundryMachine{
             } else {
                 System.out.println("Forvask kan kun tilføjes én gang.");
             }
-        }else {
-            System.out.println("Forvask kan kun tilføjes før maskinen er startet.");
         }
 
     }
