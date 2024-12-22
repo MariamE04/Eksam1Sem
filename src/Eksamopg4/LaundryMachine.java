@@ -5,7 +5,7 @@ public interface LaundryMachine {
 
     void displayPriceAndDuration();
 
-    void start();
+    void start(int duration);
 
     void addExtra();
 
