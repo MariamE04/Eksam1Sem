@@ -61,8 +61,8 @@ public class WashingMachine implements LaundryMachine{
 
     @Override
     public void addExtra() {
-        if(!isRunnig){   // Forvask kan kun tilføjes før maskinen starter
-            if(!preWashAdded){  // Kun én forvask tilladt
+        if (!isRunnig) {   // Forvask kan kun tilføjes før maskinen starter
+            if (!preWashAdded) {  // Kun én forvask tilladt
                 price += 5;     // Forvask koster 5 kr.
                 preWashAdded = true;    // Marker, at forvask er tilføjet
                 System.out.println("Forvask er blevet tilføjet. Pris +5 kr.");
@@ -70,6 +70,11 @@ public class WashingMachine implements LaundryMachine{
                 System.out.println("Forvask kan kun tilføjes én gang.");
             }
         }
+    }
 
+
+    @Override
+    public String toString() {
+        return "Vaskemaskine med kapacitet: " + capacity + " kg";
     }
 }

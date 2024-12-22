@@ -47,6 +47,11 @@ public class Dryer implements LaundryMachine {
         System.out.println("Ny varighed: " + duration + " minutter.");
         System.out.println("Samlet pris: " + (price * duration) + " kr.");
     }
+
+    @Override
+    public String toString() {
+        return "Tørretumbler med standard varighed: " + duration + " minutter";
+    }
 }
 
 

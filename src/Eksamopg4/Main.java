@@ -4,20 +4,23 @@ public class Main {
     public static void main(String[] args) {
         LaundryService laundryService = new LaundryService();
 
+        // Tilføj én vaskemaskine med kapacitet 5 kg
         laundryService.addMachine(new WashingMachine(5));
-        laundryService.addMachine(new WashingMachine(7));
+
+        // Tilføj én tørretumbler
         laundryService.addMachine(new Dryer());
 
+        // Vælg maskine
         LaundryMachine currentMachine = laundryService.chooseMachine();
 
-        if(currentMachine != null){
+        if (currentMachine != null) {
+            // Test de forskellige metoder på den valgte maskine
             currentMachine.chooseProgram();
-            currentMachine.displayPriceAndDuration();
-            currentMachine.addExtra();
-            currentMachine.displayPriceAndDuration();
-            currentMachine.start(30);
-            currentMachine.addExtra();
-            currentMachine.displayPriceAndDuration();
+            currentMachine.addExtra();  // Tilføj ekstra funktioner, som forvask
+            currentMachine.displayPriceAndDuration();  // Print oplysninger én gang
+            currentMachine.start(30);  // Start maskinen
+            currentMachine.addExtra();  // Hvis nødvendigt, tilføj ekstra funktioner igen
         }
     }
 }
+

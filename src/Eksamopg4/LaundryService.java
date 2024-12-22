@@ -22,7 +22,7 @@ public class LaundryService {
 
         System.out.println("Vælg en maskine fra listen:");
         for (int i = 0; i < laundryMachines.size(); i++) {
-            System.out.println((i + 1) + ") " + laundryMachines.get(i).getClass().getSimpleName()); //returnerer objektets klasse (fx WashingMachine || Dryer).
+            System.out.println((i + 1) + ") " + laundryMachines.get(i).toString()); // Brug toString her
         }
 
         Scanner scanner = new Scanner(System.in);
@@ -40,11 +40,7 @@ public class LaundryService {
         }
 
         LaundryMachine chosenMachine = laundryMachines.get(choice - 1);
-        System.out.println("Du har valgt: " + chosenMachine.getClass().getSimpleName());
+        System.out.println("Du har valgt: " + chosenMachine.toString());
         return chosenMachine;
     }
 }
-
-//getSimpleName()
-//Dette returnerer kun klassens navn uden hele pakkestien. For eksempel:
-//For en WashingMachine-instans vil den returnere "WashingMachine".
