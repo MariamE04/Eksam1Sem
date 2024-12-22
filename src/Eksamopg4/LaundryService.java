@@ -1,20 +1,50 @@
 package Eksamopg4;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class LaundryService {
-    private ArrayList<LaundryMachine> laundryMachines = new ArrayList<>();
+    private ArrayList<LaundryMachine> laundryMachines;
 
     public LaundryService() {
-        this.laundryMachines = laundryMachines;
+        this.laundryMachines = new ArrayList<>();
     }
 
-    public void addMachine(LaundryMachine laundryMachine){
-
+    public void addMachine(LaundryMachine laundryMachine) {
+        laundryMachines.add(laundryMachine);
     }
 
-    public LaundryMachine chooeseMachine(){
-        return null;
-    }
+    public LaundryMachine chooseMachine() {
+        if (laundryMachines.isEmpty()) {
+            System.out.println("Der er ingen maskiner tilgængelige.");
+            return null;
+        }
 
+        System.out.println("Vælg en maskine fra listen:");
+        for (int i = 0; i < laundryMachines.size(); i++) {
+            System.out.println((i + 1) + ") " + laundryMachines.get(i).getClass().getSimpleName()); //returnerer objektets klasse (fx WashingMachine || Dryer).
+        }
+
+        Scanner scanner = new Scanner(System.in);
+        int choice = -1;
+
+        // Sikrer, at brugeren vælger en gyldig maskine
+        while (choice < 1 || choice > laundryMachines.size()) {
+            System.out.print("Indtast nummeret på maskinen, du vil vælge: ");
+            if (scanner.hasNextInt()) {
+                choice = scanner.nextInt();
+            } else {
+                System.out.println("Ugyldigt input. Prøv igen.");
+                scanner.next(); // Ryd scanner buffer
+            }
+        }
+
+        LaundryMachine chosenMachine = laundryMachines.get(choice - 1);
+        System.out.println("Du har valgt: " + chosenMachine.getClass().getSimpleName());
+        return chosenMachine;
+    }
 }
+
+//getSimpleName()
+//Dette returnerer kun klassens navn uden hele pakkestien. For eksempel:
+//For en WashingMachine-instans vil den returnere "WashingMachine".
