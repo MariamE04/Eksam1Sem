@@ -22,7 +22,7 @@ public class LaundryService {
 
         System.out.println("Vælg en maskine fra listen:");
         for (int i = 0; i < laundryMachines.size(); i++) {
-            System.out.println((i + 1) + ") " + laundryMachines.get(i).toString()); // Brug toString her
+            System.out.println((i + 1) + ") " + laundryMachines.get(i).toString());
         }
 
         Scanner scanner = new Scanner(System.in);
