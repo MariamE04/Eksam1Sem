@@ -15,9 +15,11 @@ public class Dryer implements LaundryMachine {
 
     @Override
     public void chooseProgram() {
+        System.out.println("---------");
         System.out.println("Indtast et tal for følgende muligheder:");
         System.out.println("1) Lav varme");
         System.out.println("2) Høj varme");
+        System.out.println("---------");
         int choice = scan.nextInt();
 
         switch (choice) {

@@ -21,9 +21,11 @@ public class LaundryService {
 
         // Spørg brugeren om de vil vælge en vaskemaskine eller tørretumbler
         Scanner scanner = new Scanner(System.in);
+        System.out.println("---------");
         System.out.println("Vælg type maskine:");
         System.out.println("1) Vaskemaskine");
         System.out.println("2) Tørretumbler");
+        System.out.println("---------");
         int choice = scanner.nextInt();
 
         ArrayList<LaundryMachine> filteredMachines = new ArrayList<>();
@@ -42,6 +44,7 @@ public class LaundryService {
         }
 
         // Vis de tilgængelige maskiner af den valgte type
+
         System.out.println("Vælg en maskine fra listen:");
         for (int i = 0; i < filteredMachines.size(); i++) {
             System.out.println((i + 1) + ") " + filteredMachines.get(i).toString());

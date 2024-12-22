@@ -19,10 +19,12 @@ public class WashingMachine implements LaundryMachine{
 
     @Override
     public void chooseProgram() {
+            System.out.println("---------");
             System.out.println("indtast et tal, for følgne muligheder ");
             System.out.println("1) Uld og silk");
             System.out.println("2) Bomuld 40");
             System.out.println("3) Bomuld 60");
+            System.out.println("---------");
             int choice = scan.nextInt();
 
         switch (choice) {
