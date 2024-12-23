@@ -7,7 +7,11 @@ public class Driver {
 
     public Driver(String name, boolean isbooked, int[] districtCoverage) {
         this.name = name;
-        this.isbooked = isbooked;
+        this.isbooked = false;
         this.districtCoverage = districtCoverage;
+    }
+
+    public String getName() {
+        return name;
     }
 }
