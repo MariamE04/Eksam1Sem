@@ -2,23 +2,21 @@ package Eksamopg5;
 
 public class Main {
     public static void main(String[] args) {
-        // Create an instance of RickshawService
-        RickshawService r = new RickshawService();
+        // Opretter en instans af RickshawService
+        RickshawService service = new RickshawService();
 
-        // Specify the districts the driver covers (District 1 and District 3)
-        int[] districts = new int[]{1, 3};
+        // Opretter nogle chauffører og deres dækningsområder
+        int[] driver1Coverage = {1}; // Driver 1 dækker distrikt 1 og 2
+        int[] driver2Coverage = {2}; // Driver 2 dækker distrikt 3
+        int[] driver3Coverage = {1, 3}; // Driver 3 dækker distrikt 1 og 3
 
-        // Create a driver named "Pete" who covers the specified districts
-        Driver pete = r.creatDriver("Pete", districts);
+        service.creatDriver("Anders", driver1Coverage);
+        service.creatDriver("Maria", driver2Coverage);
+        service.creatDriver("Jonas", driver3Coverage);
 
-        // Print driver details to the console
-        System.out.println("Driver Name: " + pete.name);
-        System.out.print("Districts Covered: ");
-
-        // Print the districts the driver covers
-        for (int district : pete.districtCoverage) {
-            System.out.print(district + " ");
-        }
+        // Bestil en chauffør
+        service.bookDriver();
     }
 }
+
 
