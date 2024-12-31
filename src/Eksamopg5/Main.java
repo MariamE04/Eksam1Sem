@@ -6,9 +6,9 @@ public class Main {
         RickshawService service = new RickshawService();
 
         // Opretter nogle chauffører og deres dækningsområder
-        int[] driver1Coverage = {1}; // Driver 1 dækker distrikt 1 og 2
-        int[] driver2Coverage = {2}; // Driver 2 dækker distrikt 3
-        int[] driver3Coverage = {3}; // Driver 3 dækker distrikt 1 og 3
+        int[] driver1Coverage = {1}; // Driver 1 dækker distrikt 1
+        int[] driver2Coverage = {2}; // Driver 2 dækker distrikt 2
+        int[] driver3Coverage = {3}; // Driver 3 dækker distrikt 3
 
         service.creatDriver("Anders", driver1Coverage);
         service.creatDriver("Maria", driver2Coverage);
