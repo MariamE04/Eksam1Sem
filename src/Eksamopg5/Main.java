@@ -10,9 +10,9 @@ public class Main {
         int[] driver2Coverage = {2}; // Driver 2 dækker distrikt 2
         int[] driver3Coverage = {3}; // Driver 3 dækker distrikt 3
 
-        service.creatDriver("Anders", driver1Coverage);
-        service.creatDriver("Maria", driver2Coverage);
-        service.creatDriver("Jonas", driver3Coverage);
+        service.createDriver("Anders", driver1Coverage);
+        service.createDriver("Maria", driver2Coverage);
+        service.createDriver("Jonas", driver3Coverage);
 
         // Bestil en chauffør
         service.bookDriver();
