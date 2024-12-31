@@ -46,6 +46,8 @@ public class RickshawService {
         } else if (input >= 7 && input <= 9) {
             districtNumber = 3;
         }
+
+        System.out.println("Du har vaglt: " + input);
         // Find og udskriv besked om ledig chauffør
         String result = findDriver(districtNumber);
         System.out.println(result);
@@ -60,13 +62,16 @@ public class RickshawService {
                 if (district == districtNumber) {
                     // Tjek om chaufføren er ledig
                     if (!driver.isbooked) {
-                        return "Chauffør: " + driver.name + " er tilgængelig"; // Returner hvis en ledig chauffør findes
+                        // Markér chaufføren som booket og returner
+                        driver.isbooked = true;
+                        return "Chauffør: " + driver.name + " er tilgængelig";
                     }
                 }
             }
         }
-        return "Der blev ikke fundet nogen ledig chauffør"; // Hvis ingen chauffør findes
+        return "Der blev ikke fundet nogen ledig chauffør";
     }
+
 
 }
 

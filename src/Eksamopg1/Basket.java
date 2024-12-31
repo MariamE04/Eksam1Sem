@@ -25,7 +25,7 @@ public class Basket {
             }
         }
 
-        System.out.println("\\nElectronics");
+        System.out.println("\nElectronics");
         for (Product product : products) {
             if (product instanceof Electronic){
                 Electronic electronic = (Electronic) product;

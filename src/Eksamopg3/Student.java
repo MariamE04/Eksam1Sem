@@ -13,7 +13,7 @@ public class Student {
 
     public boolean addCourse(String course, int grade) {
         if (courses.containsKey(course)) {
-            return false; // Kursus findes allerede
+            return false; // Kursus findes allerede, stop
         }
         if (isGradeValid(grade)) {
             courses.put(course, grade); // Tilføj kursus og karakter
@@ -50,3 +50,17 @@ public class Student {
         return new HashMap<>(courses); // Returnér en kopi
     }
 }
+
+/*private boolean isGradeValid(int grade) {
+    // Liste over gyldige karakterer
+    int[] validGrades = {-3, 0, 2, 4, 7, 10, 12};
+
+    // Gennemløber listen for at se, om karakteren findes i den
+    for (int valid : validGrades) {
+        if (grade == valid) {
+            return true; // Karakteren er gyldig
+        }
+    }
+
+    return false; // Karakteren er ikke gyldig
+}*/
