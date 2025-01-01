@@ -5,16 +5,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BookingSystem {
-    List<Room> rooms;
-    List<Booking> bookings;
+    private List<Room> rooms;
+    private List<Booking> bookings;
+    private List<User> users;
 
     public BookingSystem() {
-        this.rooms = new ArrayList<>();  // Initialiserer rooms
-        this.bookings = new ArrayList<>();  // Initialiserer bookings
+        this.rooms = new ArrayList<>();
+        this.bookings = new ArrayList<>();
+        this.users = new ArrayList<>();
     }
 
     public List<Room> getRooms() {
         return rooms;
+    }
+
+    public List<Booking> getBookings() {
+        return bookings;
     }
 
     public void addRoom(Room room) {
@@ -25,44 +31,59 @@ public class BookingSystem {
         }
     }
 
+    public void addUser(User user) {
+        if (user != null) {
+            users.add(user);
+        } else {
+            throw new IllegalArgumentException("User cannot be null.");
+        }
+    }
 
     public boolean isAvailable(Room room, LocalDateTime start, LocalDateTime end) {
+        if (start.isAfter(end)) {
+            throw new IllegalArgumentException("Start time must be before end time.");
+        }
+
         for (Booking booking : bookings) {
             if (booking.getRoom().equals(room) &&
                     (start.isBefore(booking.getEnd()) && end.isAfter(booking.getStart()))) {
-                // Tjekker om tiderne overlapper
                 return false;
             }
         }
         return true;
     }
 
-    public ArrayList<Room> findAvailable(int capacity, LocalDateTime start, LocalDateTime end ){
-            ArrayList<Room> availableRooms = new ArrayList<>();
-            for(Room room : rooms){
-                if(room.getCapacity() >= capacity && isAvailable(room, start, end)){
-                    availableRooms.add(room);
-                }
+    public ArrayList<Room> findAvailable(int capacity, LocalDateTime start, LocalDateTime end) {
+        ArrayList<Room> availableRooms = new ArrayList<>();
+        for (Room room : rooms) {
+            if (room.getCapacity() >= capacity && isAvailable(room, start, end)) {
+                availableRooms.add(room);
             }
-            return availableRooms;
-     }
+        }
+        return availableRooms;
+    }
 
-     public  Booking book(Room room, LocalDateTime start, LocalDateTime end, User user) {
-         if (isAvailable(room, start, end)) {  // Tjekker om rummet er ledigt
-             Booking newBooking = new Booking(room, user, start, end);  // Opretter en ny booking
-             bookings.add(newBooking);     // Tilføjer bookingen til listen over eksisterende bookinger
-             return newBooking;
-         } else {
-             throw new IllegalArgumentException("Room is not available for the given time."); // Kaster en undtagelse
-            }
-         }
+    public Booking book(Room room, LocalDateTime start, LocalDateTime end, User user) {
+        if (start.isAfter(end)) {
+            throw new IllegalArgumentException("Start time must be before end time.");
+        }
+
+        if (isAvailable(room, start, end)) {
+            Booking newBooking = new Booking(room, user, start, end);
+            bookings.add(newBooking);
+            System.out.println("Booking created for user ID: " + user.getUserID());
+            return newBooking;
+        } else {
+            throw new IllegalArgumentException("Room is not available for the given time.");
+        }
+    }
 
     public void cancel(Booking booking) {
         if (bookings.contains(booking)) {
             bookings.remove(booking);
-            System.out.println("Booking successfully canceled.");
         } else {
             throw new IllegalArgumentException("Booking does not exist.");
         }
     }
 }
+

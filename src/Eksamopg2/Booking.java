@@ -9,6 +9,10 @@ public class Booking {
     private LocalDateTime end;
 
     public Booking(Room room, User user, LocalDateTime start, LocalDateTime end) {
+        if (start.isAfter(end)) {
+            throw new IllegalArgumentException("Start time must be before end time.");
+        }
+
         this.room = room;
         this.user = user;
         this.start = start;
@@ -26,6 +30,6 @@ public class Booking {
     public LocalDateTime getEnd() {
         return end;
     }
-
 }
+
 

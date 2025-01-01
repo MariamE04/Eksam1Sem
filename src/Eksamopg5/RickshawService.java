@@ -59,7 +59,6 @@ public class RickshawService {
 }
 
 
-
 /*  // Distrikt 1
         districts[0][0] = "Christiania";
         districts[0][1] = "Operaen";
