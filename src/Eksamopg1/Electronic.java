@@ -11,5 +11,10 @@ public class Electronic extends Product {
     public int getWarrantyNoOfMonths() {
         return warrantyNoOfMonths;
     }
+
+    @Override
+    public String toString() {
+        return getName() + " , months warranty:  " + getWarrantyNoOfMonths() + " , " + getPrice() + " euro";
+    }
 }
 

@@ -17,5 +17,11 @@ public class Clothes extends Product {
     public int getSize() {
         return size;
     }
+
+    @Override
+    public String toString() {
+        return getName() + " , Color: " + getColor() + " , Size: " + getSize() + " , " + getPrice() + " euro";
+    }
+
 }
 

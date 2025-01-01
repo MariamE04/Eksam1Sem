@@ -14,38 +14,31 @@ public class Basket {
             System.out.println("The basket is empty.");
             return;
         }
+
         System.out.println("Clothes");
         for (Product product : products) {
             if (product instanceof Clothes) {
-                Clothes clothes = (Clothes) product;
-                System.out.println(clothes.getName() + " , " +
-                        clothes.getColor() + " Size: " +
-                        clothes.getSize() + " , " +
-                        clothes.getPrice() + " euro");
+                System.out.println(product.toString());
             }
         }
 
         System.out.println("\nElectronics");
         for (Product product : products) {
-            if (product instanceof Electronic){
-                Electronic electronic = (Electronic) product;
-                System.out.println(electronic.getName() + " , " +
-                        electronic.getWarrantyNoOfMonths() + "  months warranty: " +
-                        electronic.getPrice() + " euro");
+            if (product instanceof Electronic) {
+                System.out.println(product.toString());
             }
         }
 
         System.out.println("\nFood");
-        for (Product product : products){
-            if(product instanceof Food){
-                Food food = (Food) product;
-                System.out.println(food.getName() + " , " +
-                        food.getExpireDate() + " : " +
-                        food.getPrice() + " euro");
+        for (Product product : products) {
+            if (product instanceof Food) {
+                System.out.println(product.toString());
             }
         }
+
         System.out.printf("\nTotal: %.2f euro\n", calculateTotalPrice());
     }
+
 
     private double calculateTotalPrice(){
         double total = 0;
@@ -54,5 +47,13 @@ public class Basket {
         }
         return total;
     }
+
 }
 
+/*public void removeProduct(Product product) {
+    if (products.contains(product)) {
+        products.remove(product);
+    } else {
+        System.out.println("Produktet findes ikke i kurven.");
+    }
+}*/

@@ -11,6 +11,11 @@ public class Food extends Product {
     public String getExpireDate() {
         return expireDate;
     }
-}
 
+    @Override
+    public String toString() {
+        return getName() + " , Expire Date: " + getExpireDate() + " , " + getPrice() + " euro";
+
+    }
+}
 
