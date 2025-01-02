@@ -1,8 +1,8 @@
 package Eksamopg2;
 
 public class Room {
-    private int capacity;
     private String name;
+    private int capacity;
 
     public Room(String name, int capacity) {
         this.capacity = capacity;

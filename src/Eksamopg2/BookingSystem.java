@@ -1,3 +1,6 @@
+//BookingSystem håndterer værelser, brugere og bookinger.
+//tilføje (værelser, brugere) + finde ledige værelser, oprette og aflyse bookinger.
+
 package Eksamopg2;
 
 import java.time.LocalDateTime;
@@ -15,14 +18,17 @@ public class BookingSystem {
         this.users = new ArrayList<>();
     }
 
+    // Returnerer listen af alle værelser i systemet.
     public List<Room> getRooms() {
         return rooms;
     }
 
+    //Returnerer listen af alle bookinger i systemet.
     public List<Booking> getBookings() {
         return bookings;
     }
 
+    //Tilføjer et værelse til systemet, null =  kastet en undtagelse
     public void addRoom(Room room) {
         if (room != null) {
             rooms.add(room);
@@ -31,6 +37,7 @@ public class BookingSystem {
         }
     }
 
+    //Tilføjer en bruger til systemet, null = kastet en undtagelse
     public void addUser(User user) {
         if (user != null) {
             users.add(user);
@@ -39,6 +46,7 @@ public class BookingSystem {
         }
     }
 
+    //metode tjekker, om et værelse er tilgængeligt i den ønskede tidsperiode.
     public boolean isAvailable(Room room, LocalDateTime start, LocalDateTime end) {
         if (start.isAfter(end)) {
             throw new IllegalArgumentException("Start time must be before end time.");
@@ -53,6 +61,7 @@ public class BookingSystem {
         return true;
     }
 
+    //søger efter værelser, der har den nødvendige kapacitet og er tilgængelige i den ønskede tidsperiode.
     public ArrayList<Room> findAvailable(int capacity, LocalDateTime start, LocalDateTime end) {
         ArrayList<Room> availableRooms = new ArrayList<>();
         for (Room room : rooms) {
@@ -60,9 +69,10 @@ public class BookingSystem {
                 availableRooms.add(room);
             }
         }
-        return availableRooms;
+        return availableRooms; //Den returnerer en liste af værelser, der opfylder kravene.
     }
 
+    //metoden forsøger at oprette en booking for et værelse.
     public Booking book(Room room, LocalDateTime start, LocalDateTime end, User user) {
         if (start.isAfter(end)) {
             throw new IllegalArgumentException("Start time must be before end time.");
@@ -78,6 +88,7 @@ public class BookingSystem {
         }
     }
 
+    //metoden fjerner en booking fra systemet.
     public void cancel(Booking booking) {
         if (bookings.contains(booking)) {
             bookings.remove(booking);

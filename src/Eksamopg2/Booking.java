@@ -12,7 +12,6 @@ public class Booking {
         if (start.isAfter(end)) {
             throw new IllegalArgumentException("Start time must be before end time.");
         }
-
         this.room = room;
         this.user = user;
         this.start = start;
