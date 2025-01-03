@@ -12,10 +12,12 @@ public class Main {
         Room room1 = new Room("Meeting room A", 10);
         Room room2 = new Room("Meeting room B", 15);
         Room room3 = new Room("Meeting room C", 20);
+        Room room4 = new Room("Meeting room d",10);
 
         system.addRoom(room1);
         system.addRoom(room2);
         system.addRoom(room3);
+        system.addRoom(room4);
 
         // Tilføj brugere
         User user1 = new User("Mariam");
@@ -40,7 +42,7 @@ public class Main {
         }
 
         // Tjek og udskriv ledige rum igen
-        printAvailableRooms(system, 15, start, end, "Available rooms after booking:");
+        printAvailableRooms(system, 10, start, end, "Available rooms after booking:");
 
         // Annuller bookingen
         try {
