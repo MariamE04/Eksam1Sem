@@ -50,7 +50,7 @@ public class Main {
         // Udskriv den højeste og laveste karakter
         System.out.println("--------------------------");
         System.out.println("Lowest and highest grade:");
-        System.out.println("Highest grade: " + academy.gethighestGrade());
+        System.out.println("Highest grade: " + academy.getHighestGrade());
         System.out.println("Lowest grade: " + academy.getLowestGrade());
     }
 }

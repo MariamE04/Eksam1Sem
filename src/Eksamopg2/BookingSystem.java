@@ -1,6 +1,5 @@
 //BookingSystem håndterer værelser, brugere og bookinger.
-//tilføje (værelser, brugere) + finde ledige værelser, oprette og aflyse bookinger.
-
+//BookingSystem-klassen er ansvarlig for at administrere alle mødelokaler, brugere og bookinger.
 package Eksamopg2;
 
 import java.time.LocalDateTime;

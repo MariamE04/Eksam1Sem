@@ -33,6 +33,7 @@ public class Student {
 
     public double calculateAverage() {
         if (courses.isEmpty()) {
+            System.out.println("No courses available for student: " + name);
             return 0.0; // Ingen kurser
         }
         double sum = 0;

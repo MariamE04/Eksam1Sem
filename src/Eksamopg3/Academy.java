@@ -7,9 +7,10 @@ public class Academy {
     private ArrayList<Course> courses;
 
     public Academy(ArrayList<Student> students, ArrayList<Course> courses){
-        this.students = new ArrayList<>();
-        this.courses = new ArrayList<>();
+        this.students = students;
+        this.courses = courses;
     }
+
 
     public void addStudent(Student student){
         if(!students.contains(student)){
@@ -42,7 +43,7 @@ public class Academy {
 
 
     // Returner den højeste karakter blandt alle studerende
-    public int gethighestGrade() {
+    public int getHighestGrade() {
         int highest = Integer.MIN_VALUE;  // Start med den laveste mulige værdi
 
         // Gennemgå hver student i listen

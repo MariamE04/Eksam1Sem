@@ -1,3 +1,5 @@
+// Main-klassen fungerer som testklassen, hvor jeg demonstrerer systemets funktioner
+
 package Eksamopg2;
 
 import java.time.LocalDateTime;
@@ -38,7 +40,7 @@ public class Main {
         }
 
         // Tjek og udskriv ledige rum igen
-        printAvailableRooms(system, 10, start, end, "Available rooms after booking:");
+        printAvailableRooms(system, 15, start, end, "Available rooms after booking:");
 
         // Annuller bookingen
         try {
