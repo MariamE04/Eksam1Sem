@@ -11,19 +11,21 @@ public class Academy {
         this.courses = courses;
     }
 
-
+    //Tilføjer en studerende til akademiets liste
     public void addStudent(Student student){
         if(!students.contains(student)){
             students.add(student);
         }
     }
 
+    //Tilføjer et kursus til akademiets liste
     public void addCourse(Course course){
         if(!courses.contains(course)){
             courses.add(course);
         }
     }
 
+    //Udskriver: en studerendes kursusliste + karakterer + gennemsnittet karakterer.
     public void printDiploma(Student student){
         if(!students.contains(student)) {
             System.out.println("student not found");

@@ -11,6 +11,7 @@ public class Student {
         this.courses = new HashMap<>();
     }
 
+    // Tilføjer et kursus med en karakter til en studerendes kursusliste
     public boolean addCourse(String course, int grade) {
         if (courses.containsKey(course)) {
             return false; // Kursus findes allerede, stop
@@ -22,6 +23,7 @@ public class Student {
         return false; // Ugyldig karakter
     }
 
+    //Tjekker, om en karakter er gyldig
     private boolean isGradeValid(int grade) {
         return grade == -3 || grade == 0 || grade == 2 || grade == 4
                 || grade == 7 || grade == 10 || grade == 12;
@@ -31,6 +33,7 @@ public class Student {
         return courses.get(courseName); // Hent karakter for kursusnavn
     }
 
+    //Beregner og returnerer gennemsnittet af en studerendes karakterer.
     public double calculateAverage() {
         if (courses.isEmpty()) {
             System.out.println("No courses available for student: " + name);
