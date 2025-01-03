@@ -1,3 +1,5 @@
+//Student-klassen ansvarlig for at repræsentere den enkelte studerende."
+
 package Eksamopg3;
 
 import java.util.HashMap;
@@ -51,7 +53,7 @@ public class Student {
     }
 
     public HashMap<String, Integer> getCourses() {
-        return new HashMap<>(courses); // Returnér en kopi
+        return new HashMap<>(courses); // Returnér en kopi = så originale courses-map IKKE ændres direkte udefra.
     }
 }
 

@@ -1,3 +1,5 @@
+//hovedadministratoren, der håndterer relationen mellem studerende og kurser.
+
 package Eksamopg3;
 
 import java.util.ArrayList;
@@ -11,7 +13,7 @@ public class Academy {
         this.courses = courses;
     }
 
-    //Tilføjer en studerende til akademiets liste
+    //Tilføjer en studerende til akademiets liste (håndterer fejl)
     public void addStudent(Student student){
         if(!students.contains(student)){
             students.add(student);
@@ -25,9 +27,9 @@ public class Academy {
         }
     }
 
-    //Udskriver: en studerendes kursusliste + karakterer + gennemsnittet karakterer.
+    // formål at udskrive en diplomoversigt for en studerende.
     public void printDiploma(Student student){
-        if(!students.contains(student)) {
+        if(!students.contains(student)) { //kontrollere en betingelse.
             System.out.println("student not found");
             return;
         }

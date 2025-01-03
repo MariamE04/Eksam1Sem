@@ -1,3 +1,4 @@
+//programmet starter
 package Eksamopg3;
 
 import java.util.ArrayList;
@@ -5,11 +6,11 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
 
-        // Opret en tom liste til studerende og kurser
+        // Opret tom liste til studerende og kurser
         ArrayList<Student> students = new ArrayList<>();
         ArrayList<Course> courses = new ArrayList<>();
 
-        // Opret akademiet
+        // Opret akademiet/ administrere
         Academy academy = new Academy(students,courses);
 
         // Opret studerende
