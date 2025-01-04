@@ -1,10 +1,11 @@
+//Booking-klassen repræsenterer en reservation af et mødelokale
 package Eksamopg2;
 
 import java.time.LocalDateTime;
 
 public class Booking {
-    private Room room;
-    private User user;
+    private Room room; //booket
+    private User user; //foretaget bookingen
     private LocalDateTime start;
     private LocalDateTime end;
 
