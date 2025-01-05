@@ -7,9 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BookingSystem {
-    private List<Room> rooms;
-    private List<Booking> bookings;
-    private List<User> users;
+    private List<Room> rooms; //opbevare mødelokaler
+    private List<Booking> bookings; //eksisterende reservationer
+    private List<User> users; //gemme brugere
 
     public BookingSystem() {
         this.rooms = new ArrayList<>();
@@ -27,7 +27,7 @@ public class BookingSystem {
         return bookings;
     }
 
-    //Tilføjer et værelse til systemet, null =  kastet en undtagelse
+    //Tilføjer et værelse til systemet, kastet en undtagelse
     public void addRoom(Room room) {
         if (room != null) {
             rooms.add(room);

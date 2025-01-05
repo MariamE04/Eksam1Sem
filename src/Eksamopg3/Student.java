@@ -1,4 +1,4 @@
-//Student-klassen ansvarlig for at repræsentere den enkelte studerende."
+//Student-klassen gemmer oplysninger om studerende, herunder deres kurser og karakterer.
 
 package Eksamopg3;
 

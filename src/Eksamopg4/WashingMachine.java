@@ -3,12 +3,12 @@ package Eksamopg4;
 import java.util.Scanner;
 
 public class WashingMachine implements LaundryMachine{
-    private int duration;
-    private double price;
-    private boolean isRunnig;
-    private int capacity;
-    private Scanner scan;
-    private boolean preWashAdded;
+    private int duration; //Programvarighed.
+    private double price; //Prisen pr. minut
+    private boolean isRunnig; //angiver, om maskinen kører.
+    private int capacity; //kapacitet i kilogram
+    private Scanner scan; //input fra brugeren
+    private boolean preWashAdded; //forvask er tilføjet
 
     public WashingMachine( int capacity) {
         this.capacity = capacity;
@@ -17,6 +17,7 @@ public class WashingMachine implements LaundryMachine{
         this.preWashAdded = false; // Forvask er ikke tilføjet som standard
     }
 
+    //Giver brugeren mulighed for at vælge et vaskeprogram, som bestemmer varigheden.
     @Override
     public void chooseProgram() {
             System.out.println("---------");
@@ -45,6 +46,7 @@ public class WashingMachine implements LaundryMachine{
 
     }
 
+    //Beregner og viser samlet pris og varighed for vasken
     @Override
     public void displayPriceAndDuration() {
         System.out.println("Pris pr. minut: " + price + " kr.");
@@ -53,14 +55,16 @@ public class WashingMachine implements LaundryMachine{
     }
 
 
+    //Metoden tager en parameter for at specificere varigheden
     @Override
     public void start(int duration) {
-        this.duration =duration;
+        this.duration = duration;
         this.isRunnig = true;
         System.out.println("Maskinen er startet og vil køre i " + duration + " minutter.");
     }
 
 
+    //Giver mulighed for at tilføje en forvask før maskinen starter
     @Override
     public void addExtra() {
         if (!isRunnig) {   // Forvask kan kun tilføjes før maskinen starter

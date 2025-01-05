@@ -1,3 +1,6 @@
+//fungerer som en controller for alle vaskemaskiner og tørretumblere.
+//holder styr på tilgængelige maskiner og lader brugeren vælge og administrere dem
+
 package Eksamopg4;
 
 import java.util.ArrayList;
@@ -50,7 +53,7 @@ public class LaundryService {
             System.out.println((i + 1) + ") " + filteredMachines.get(i).toString());
         }
 
-        int validChoice = -1;
+        int validChoice = -1; //"ugyldig" startværdi.
         while (validChoice < 1 || validChoice > filteredMachines.size()) {
             System.out.print("Indtast nummeret på maskinen, du vil vælge: ");
             if (scanner.hasNextInt()) {

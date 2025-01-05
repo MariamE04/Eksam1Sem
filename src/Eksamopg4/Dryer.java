@@ -36,6 +36,7 @@ public class Dryer implements LaundryMachine {
         System.out.println("Samlet pris: " + (price * duration) + " kr.");
     }
 
+    //Ændrer maskinens varighed, når programmet starter.
     @Override
     public void start(int duration) {
         this.duration = duration;

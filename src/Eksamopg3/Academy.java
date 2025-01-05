@@ -13,7 +13,7 @@ public class Academy {
         this.courses = courses;
     }
 
-    //Tilføjer en studerende til akademiets liste (håndterer fejl)
+    //Tilføjer en studerende til akademiets liste
     public void addStudent(Student student){
         if(!students.contains(student)){
             students.add(student);
